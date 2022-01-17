@@ -1,23 +1,17 @@
+const root = document.getElementById('root')
+setInterval(printTime, 1000)
 
-function luckyTicket(number) {
-    let sum = 0;
-    while (number != 0) {
-        sum = Math.trunc(number % 10 - sum);
-        Math.trunc(number /= 10);
+function printTime(){
+    const d = new Date();
+    const h = d.getHours();
+    const m = (d.getMinutes() < 10)? '0' + d.getMinutes() : d.getMinutes();
+    const s = (d.getSeconds() < 10)? '0' + d.getSeconds() : d.getSeconds();
+    const h1 = document.createElement('h1');
+    const time = document.createTextNode(`${h} : ${m} : ${s}`);
+    h1.append(time);
+    if(root.firstElementChild){
+        root.replaceChild(h1, root.firstElementChild);
+    } else {
+        root.append(h1)
     }
-    return sum == 0;
 }
-
-function sumNubers(number) {
-    let sum = 0;
-    while (number != 0) {
-        sum += Math.trunc(number % 10);
-        number = number / 10
-    }
-    return sum;
-}
-
-
-let a = luckyTicket(1441)
-let b = sumNubers(1441)
-console.log(a, b);
