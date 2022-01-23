@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Persons</title>
+    <title>Company</title>
     <link rel="stylesheet" href="./style.css">
     <script defer src="./script.js"></script>
+    <!-- <script defer src="./object.js"></script> -->
 </head>
 
 <body>
@@ -21,19 +22,22 @@
         <label>Last Name:
             <input type="text" id="lastName">
         </label>
-        <label>Age:
-            <input type="text" id="age">
+        <label>Birth Date:
+            <input type="date" id="birthDate">
+        </label>
+        <label>Salary:
+            <input type="number" id="salary" min="0">
         </label>
     </div>
     <div>
-        <button id="addPerson">Add person</button>
+        <button id="addPerson">Add employee</button>
         <button id="calcStats">Get stats</button>
     </div>
     <div id="stats">
         <h2>Stats</h2>
     </div>
     <div>
-        <h2>Persons</h2>
+        <h2>Employees</h2>
         <ol id="personsList"></ol>
     </div>
 </body>
