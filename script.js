@@ -60,7 +60,7 @@ class Company {
     getStatisctic() {
         this._stat.salary = Math.round(this._employees.reduce((acc, p) => acc + p.salary, 0) / this._employees.length);
         let today = new Date().getFullYear();
-        this._stat.middleAge = Math.round(this._employees.reduce((acc, p) => acc + today - p.birthDate.getFullYear(), 0) / this._employees.length)
+        this._stat.middleAge = this._employees.reduce((acc, p) => acc + today - p.birthDate.getFullYear(), 0) / this._employees.length
         this._stat.min = this._employees.reduce((acc, p) => acc > today - p.birthDate.getFullYear() ? today - p.birthDate.getFullYear() : acc, today - this._employees[0].birthDate.getFullYear(), 0)
         this._stat.max = this._employees.reduce((acc, p) => acc < today - p.birthDate.getFullYear() ? today - p.birthDate.getFullYear() : acc, today - this._employees[0].birthDate.getFullYear(), 0)
         return this._stat.max
